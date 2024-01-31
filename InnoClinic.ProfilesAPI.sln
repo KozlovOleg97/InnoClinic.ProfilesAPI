@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{57B6FCF1-386B-45D6-A96A-A034B7D27B74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.ProfilesAPI.WebAPI", "src\InnoClinic.ProfilesAPI.WebAPI\InnoClinic.ProfilesAPI.WebAPI.csproj", "{D7940FA9-6C30-42A0-B1BA-BF62DF81F693}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.ProfilesAPI.Core", "InnoClinic.ProfilesAPI.Core\InnoClinic.ProfilesAPI.Core.csproj", "{9EF15985-B2DF-4ED0-9D73-A94ED8110CBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.ProfilesAPI.Infrastructure", "InnoClinic.ProfilesAPI.Infrastructure\InnoClinic.ProfilesAPI.Infrastructure.csproj", "{B2A546D2-0F4E-4613-8CFD-7FDAB10D153A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.ProfilesAPI.UseCases", "InnoClinic.ProfilesAPI.UseCases\InnoClinic.ProfilesAPI.UseCases.csproj", "{FCEA1BE6-DB5E-481F-98BC-ADB305B56A95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7940FA9-6C30-42A0-B1BA-BF62DF81F693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7940FA9-6C30-42A0-B1BA-BF62DF81F693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7940FA9-6C30-42A0-B1BA-BF62DF81F693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7940FA9-6C30-42A0-B1BA-BF62DF81F693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EF15985-B2DF-4ED0-9D73-A94ED8110CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF15985-B2DF-4ED0-9D73-A94ED8110CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF15985-B2DF-4ED0-9D73-A94ED8110CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF15985-B2DF-4ED0-9D73-A94ED8110CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A546D2-0F4E-4613-8CFD-7FDAB10D153A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A546D2-0F4E-4613-8CFD-7FDAB10D153A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A546D2-0F4E-4613-8CFD-7FDAB10D153A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A546D2-0F4E-4613-8CFD-7FDAB10D153A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCEA1BE6-DB5E-481F-98BC-ADB305B56A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCEA1BE6-DB5E-481F-98BC-ADB305B56A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCEA1BE6-DB5E-481F-98BC-ADB305B56A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCEA1BE6-DB5E-481F-98BC-ADB305B56A95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D7940FA9-6C30-42A0-B1BA-BF62DF81F693} = {57B6FCF1-386B-45D6-A96A-A034B7D27B74}
+		{9EF15985-B2DF-4ED0-9D73-A94ED8110CBE} = {57B6FCF1-386B-45D6-A96A-A034B7D27B74}
+		{B2A546D2-0F4E-4613-8CFD-7FDAB10D153A} = {57B6FCF1-386B-45D6-A96A-A034B7D27B74}
+		{FCEA1BE6-DB5E-481F-98BC-ADB305B56A95} = {57B6FCF1-386B-45D6-A96A-A034B7D27B74}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C9185EF-96AA-47C3-91D4-24EFDFD03F53}
+	EndGlobalSection
+EndGlobal
