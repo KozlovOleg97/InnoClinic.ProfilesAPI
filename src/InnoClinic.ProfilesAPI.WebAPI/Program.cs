@@ -1,4 +1,6 @@
 
+using InnoClinic.ProfilesAPI.UseCases;
+
 namespace InnoClinic.ProfilesAPI.WebAPI
 {
     public class Program
@@ -9,6 +11,9 @@ namespace InnoClinic.ProfilesAPI.WebAPI
 
             // Add services to the container.
 
+            builder.Services.AddApplication();
+
+          
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

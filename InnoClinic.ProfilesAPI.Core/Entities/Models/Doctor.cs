@@ -10,9 +10,11 @@ namespace InnoClinic.ProfilesAPI.Core.Entities.Models
 {
     public class Doctor : OverallBaseEntityProfile
     {
+        public DateTime DateOfBirth { get; set; }
         public Guid SpecializationId { get; set; }
+        public string SpecializationName { get; set; }
         public Guid OfficeId { get; set; }
         public DateTime CareerStartYear { get; set; }
-        // public string SpecializationName { get; set; }
+        public string Status { get; set; }
     }
 }

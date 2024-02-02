@@ -2,7 +2,7 @@
 
 namespace InnoClinic.ProfilesAPI.WebAPI.Controllers.v1
 {
-    public class ReceptionistsController : Controller
+    public class ReceptionistController : Controller
     {
         public IActionResult Index()
         {
