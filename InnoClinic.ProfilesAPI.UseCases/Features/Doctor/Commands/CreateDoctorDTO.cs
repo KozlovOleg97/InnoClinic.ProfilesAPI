@@ -13,10 +13,5 @@ namespace InnoClinic.ProfilesAPI.UseCases.Features.Doctor.Commands
         public Guid AccountId { get; set; }
         public Guid SpecializationId { get; set; }
         public Guid OfficeId { get; set; }
-
-        public static void Mapping(Profile profile)
-        {
-            profile.CreateMap<CreateDoctorResponse, CreateDoctorDTO>();
-        }
     }
 }

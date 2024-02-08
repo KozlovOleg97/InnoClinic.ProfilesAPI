@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using InnoClinic.ProfilesAPI.Core.Entities.Models;
 using InnoClinic.ProfilesAPI.UseCases.DTOs;
+using InnoClinic.ProfilesAPI.UseCases.Features.Doctor.Commands;
+using InnoClinic.ProfilesAPI.UseCases.Features.Doctor.Queries.GetAllDoctors;
 
 namespace InnoClinic.ProfilesAPI.UseCases.Mappings
 {
@@ -14,6 +16,14 @@ namespace InnoClinic.ProfilesAPI.UseCases.Mappings
     {
         public MappingProfile()
         {
+            CreateMap<DoctorDTO, Doctor>().ReverseMap();
+            CreateMap<CreateDoctorResponse, CreateDoctorDTO>().ReverseMap();
+            CreateMap<GetAllDoctorsResponse, GetAllDoctorsDTO>().ReverseMap();
+
+            CreateMap<Patient, PatientDTO>().IncludeMembers(u => u.AdditionalInfo).ReverseMap();
+            CreateMap<AdditionalInfo, PatientDTO>(MemberList.None).ReverseMap();
+            
+
             ApplyMappingsFromAssembly(Assembly.GetExecutingAssembly());
         }
 

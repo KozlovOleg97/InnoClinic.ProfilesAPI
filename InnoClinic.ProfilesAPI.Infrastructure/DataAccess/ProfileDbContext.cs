@@ -10,11 +10,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace InnoClinic.ProfilesAPI.Infrastructure.DataAccess
 {
-    public class ApplicationDbContext : DbContext, IApplicationDbContext
+    public class ProfileDbContext : DbContext
     {
         private readonly IConfiguration _configuration;
 
-        public ApplicationDbContext(IConfiguration configuration)
+        public ProfileDbContext(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -30,7 +30,7 @@ namespace InnoClinic.ProfilesAPI.Infrastructure.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProfileDbContext).Assembly);
             modelBuilder.Entity<Doctor>().ToTable("Doctor");
             modelBuilder.Entity<Patient>().ToTable("Patient");
             modelBuilder.Entity<Receptionist>().ToTable("Receptionist");

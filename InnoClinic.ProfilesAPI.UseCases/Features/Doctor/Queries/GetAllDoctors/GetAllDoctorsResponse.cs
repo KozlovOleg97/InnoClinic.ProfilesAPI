@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InnoClinic.ProfilesAPI.Core.Entities.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,6 @@ namespace InnoClinic.ProfilesAPI.UseCases.Features.Doctor.Queries.GetAllDoctors
         public DateTime CareerStartYear { get; set; }
 
         [JsonPropertyName("Status")]
-        public string Status { get; set; }
+        public Status Status { get; set; }
     }
 }

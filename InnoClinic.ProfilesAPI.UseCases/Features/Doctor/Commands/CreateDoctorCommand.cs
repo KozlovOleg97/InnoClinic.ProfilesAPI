@@ -11,14 +11,6 @@ namespace InnoClinic.ProfilesAPI.UseCases.Features.Doctor.Commands
 {
     public class CreateDoctorCommand : IRequest<CreateDoctorDTO>
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string MiddleName { get; set; }
-        public string SpecializationName { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public DateTime CareerStartYear { get; set; }
-        public string Status { get; set; }
-
         public class CreateDoctorCommandHandler : IRequestHandler<CreateDoctorCommand, CreateDoctorDTO>
         {
             private readonly IDoctorsAPI _doctorsApi;

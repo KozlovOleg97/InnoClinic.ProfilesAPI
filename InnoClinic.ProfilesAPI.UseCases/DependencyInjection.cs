@@ -4,9 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace InnoClinic.ProfilesAPI.UseCases
 {
-    public static class RegistrationService
+    public static class DependencyInjection
     {
-        public static IServiceCollection AddApplication(this IServiceCollection services)
+        public static IServiceCollection ConfigureService(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());

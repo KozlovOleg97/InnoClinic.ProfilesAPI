@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace InnoClinic.ProfilesAPI.Core.Entities.Models
 {
-    public class Patient : OverallBaseEntityProfile
+    public class Patient : BaseEntityProfile
     {
+        public AdditionalInfo AdditionalInfo { get; set; }
         public bool IsLinkedToAccount { get; set; }
         public DateTime DateOfBirth { get; set; }
     }

@@ -18,8 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Receptionist\" />
-    <Folder Include="Features\Patient\" />
+    <Folder Include="Features\Patient\Commands\" />
+    <Folder Include="Features\Patient\Queries\" />
+    <Folder Include="Features\Receptionist\Commands\" />
+    <Folder Include="Features\Receptionist\Queries\" />
   </ItemGroup>
 
 </Project>

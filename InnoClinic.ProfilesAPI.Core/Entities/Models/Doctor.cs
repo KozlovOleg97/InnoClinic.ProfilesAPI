@@ -1,4 +1,5 @@
 ﻿using InnoClinic.ProfilesAPI.Core.Entities.Common;
+using InnoClinic.ProfilesAPI.Core.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace InnoClinic.ProfilesAPI.Core.Entities.Models
 {
-    public class Doctor : OverallBaseEntityProfile
+    public class Doctor : BaseEntityProfile
     {
         public DateTime DateOfBirth { get; set; }
         public Guid SpecializationId { get; set; }
         public string SpecializationName { get; set; }
         public Guid OfficeId { get; set; }
         public DateTime CareerStartYear { get; set; }
-        public string Status { get; set; }
+        public Status Status { get; set; }
     }
 }
