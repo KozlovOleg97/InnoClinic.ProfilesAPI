@@ -5,13 +5,13 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{57B6FCF1-386B-45D6-A96A-A034B7D27B74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InnoClinic.ProfilesAPI.WebAPI", "src\InnoClinic.ProfilesAPI.WebAPI\InnoClinic.ProfilesAPI.WebAPI.csproj", "{D7940FA9-6C30-42A0-B1BA-BF62DF81F693}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.ProfilesAPI.WebAPI", "src\InnoClinic.ProfilesAPI.WebAPI\InnoClinic.ProfilesAPI.WebAPI.csproj", "{D7940FA9-6C30-42A0-B1BA-BF62DF81F693}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InnoClinic.ProfilesAPI.Core", "InnoClinic.ProfilesAPI.Core\InnoClinic.ProfilesAPI.Core.csproj", "{9EF15985-B2DF-4ED0-9D73-A94ED8110CBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.ProfilesAPI.Core", "InnoClinic.ProfilesAPI.Core\InnoClinic.ProfilesAPI.Core.csproj", "{9EF15985-B2DF-4ED0-9D73-A94ED8110CBE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InnoClinic.ProfilesAPI.Infrastructure", "InnoClinic.ProfilesAPI.Infrastructure\InnoClinic.ProfilesAPI.Infrastructure.csproj", "{B2A546D2-0F4E-4613-8CFD-7FDAB10D153A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.ProfilesAPI.Infrastructure", "InnoClinic.ProfilesAPI.Infrastructure\InnoClinic.ProfilesAPI.Infrastructure.csproj", "{B2A546D2-0F4E-4613-8CFD-7FDAB10D153A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InnoClinic.ProfilesAPI.UseCases", "InnoClinic.ProfilesAPI.UseCases\InnoClinic.ProfilesAPI.UseCases.csproj", "{FCEA1BE6-DB5E-481F-98BC-ADB305B56A95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.ProfilesAPI.UseCases", "InnoClinic.ProfilesAPI.UseCases\InnoClinic.ProfilesAPI.UseCases.csproj", "{FCEA1BE6-DB5E-481F-98BC-ADB305B56A95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
