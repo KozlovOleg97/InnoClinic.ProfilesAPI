@@ -12,28 +12,29 @@ namespace InnoClinic.ProfilesAPI.Infrastructure.DataAccess
 {
     public class ProfileDbContext : DbContext
     {
-        private readonly IConfiguration _configuration;
+       
 
-        public ProfileDbContext(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
+        public ProfileDbContext(DbContextOptions<ProfileDbContext> options) : base(options) { }
 
-        public DbSet<Doctor> Doctors => Set<Doctor>();
-        public DbSet<Patient> Patients => Set<Patient>();
-        public DbSet<Receptionist> Receptionists => Set<Receptionist>();
+        //public DbSet<Doctor> Doctors => Set<Doctor>();
+        public DbSet<Patient> Patients { get; set; }
+        //public DbSet<Receptionist> Receptionists => Set<Receptionist>();
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql(_configuration.GetConnectionString("DefaultConnection"));
-        }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProfileDbContext).Assembly);
-            modelBuilder.Entity<Doctor>().ToTable("Doctor");
-            modelBuilder.Entity<Patient>().ToTable("Patient");
-            modelBuilder.Entity<Receptionist>().ToTable("Receptionist");
+
+
+            modelBuilder.Entity<Patient>().Property(e => e.Id).HasDefaultValueSql("gen_random_uuid()");
+            modelBuilder.Entity<Patient>().Property(e => e.FirstName).IsRequired();
+            modelBuilder.Entity<Patient>().Property(e => e.LastName).IsRequired();
+            modelBuilder.Entity<Patient>().Property(e => e.DateOfBirth).IsRequired();
+
+            //modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProfileDbContext).Assembly);
+            //modelBuilder.Entity<Doctor>().ToTable("Doctor");
+            //modelBuilder.Entity<Patient>().ToTable("Patient");
+            //modelBuilder.Entity<Receptionist>().ToTable("Receptionist");
         }
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InnoClinic.ProfilesAPI.Core.Entities.Models
+namespace InnoClinic.ProfilesAPI.Core.DTOs
 {
-    public class AdditionalInfo
+    public class BaseDTO
     {
-        public string PhoneNumber { get; set; }
+        public int Id { get; set; }
     }
 }

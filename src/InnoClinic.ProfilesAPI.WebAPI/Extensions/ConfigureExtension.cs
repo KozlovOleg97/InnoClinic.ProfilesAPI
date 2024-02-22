@@ -7,10 +7,10 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Extensions
     {
         public static void ConfigureDbConnection(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ProfileDbContext>(context =>
+            services.AddDbContext<ProfileDbContext>(options =>
             {
-                context.UseNpgsql(configuration.GetConnectionString("DefaultConnection"),
-                        assembly => assembly.MigrationsAssembly("InnoClinic.ProfilesAPI"));
+                options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"),
+                        assembly => assembly.MigrationsAssembly("InnoClinic.ProfilesAPI.WebAPI"));
             });
         }
 

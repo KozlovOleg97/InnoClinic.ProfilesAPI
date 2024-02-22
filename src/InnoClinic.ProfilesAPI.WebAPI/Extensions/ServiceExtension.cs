@@ -1,7 +1,12 @@
 ﻿using InnoClinic.ProfilesAPI.Infrastructure.DataAccess;
+using InnoClinic.ProfilesAPI.Infrastructure.Repositories.Interfaces;
+using InnoClinic.ProfilesAPI.Infrastructure.Repositories;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
+using InnoClinic.ProfilesAPI.UseCases.Mappings;
 
 namespace InnoClinic.ProfilesAPI.WebAPI.Extensions
 {
@@ -20,47 +25,27 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Extensions
 
                 options.EnableAnnotations();
                 options.DescribeAllParametersInCamelCase();
-
-                //options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                //{
-                //    Name = "Authorization",
-                //    In = ParameterLocation.Header,
-                //    Type = SecuritySchemeType.ApiKey,
-                //    Scheme = "Bearer",
-                //    BearerFormat = "JWT",
-                //    Description = "Input your Bearer token in this format - Bearer {your token here}"
-                //});
-
-                //options.AddSecurityRequirement(new OpenApiSecurityRequirement
-                //{
-                //    {
-                //        new OpenApiSecurityScheme
-                //        {
-                //            Reference = new OpenApiReference
-                //            {
-                //                Type = ReferenceType.SecurityScheme,
-                //                Id = "Bearer"
-                //            },
-                //            Scheme = "Bearer",
-                //            Name = "Bearer",
-                //            In = ParameterLocation.Header,
-                //        },
-                //        new List<string>()
-                //    },
-                //});
             });
         }
 
-        
-
-        public static void AddApiVersionExtension(this IServiceCollection services)
+        public static void ConfigureServices(this IServiceCollection services)
         {
-            services.AddApiVersioning(config =>
-            {
-                config.DefaultApiVersion = new ApiVersion(1, 0);
-                config.AssumeDefaultVersionWhenUnspecified = true;
-                config.ReportApiVersions = true;
-            });
+            services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
+            services.AddTransient<IPatientRepository, PatientRepository>();
+
+            
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(typeof(MappingProfile));
         }
+
+        //public static void AddApiVersionExtension(this IServiceCollection services)
+        //{
+        //    services.AddApiVersioning(config =>
+        //    {
+        //        config.DefaultApiVersion = new ApiVersion(1, 0);
+        //        config.AssumeDefaultVersionWhenUnspecified = true;
+        //        config.ReportApiVersions = true;
+        //    });
+        //}
     }
 }

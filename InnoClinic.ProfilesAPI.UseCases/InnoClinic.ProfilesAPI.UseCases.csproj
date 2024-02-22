@@ -7,21 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="12.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="MediatR" Version="12.2.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Doctor\Commands\" />
+    <Folder Include="Features\Doctor\Queries\" />
+    <Folder Include="Features\Receptionist\Commands\" />
+    <Folder Include="Features\Receptionist\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\InnoClinic.ProfilesAPI.Core\InnoClinic.ProfilesAPI.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Patient\Commands\" />
-    <Folder Include="Features\Patient\Queries\" />
-    <Folder Include="Features\Receptionist\Commands\" />
-    <Folder Include="Features\Receptionist\Queries\" />
+    <ProjectReference Include="..\InnoClinic.ProfilesAPI.Infrastructure\InnoClinic.ProfilesAPI.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

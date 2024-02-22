@@ -14,7 +14,7 @@ namespace InnoClinic.ProfilesAPI.WebAPI
 
             
             builder.Services.ConfigureDbConnection(builder.Configuration);
-            builder.Services.ConfigureService();
+            builder.Services.ConfigureServices();
 
            
             builder.Services.AddControllers();

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace InnoClinic.ProfilesAPI.Core.Entities.Models
 {
-    public class Patient : BaseEntityProfile
+    public partial class Patient : BaseEntityProfile
     {
-        public AdditionalInfo AdditionalInfo { get; set; }
+        public string? PhoneNumber { get; set; }
         public bool IsLinkedToAccount { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
     }
 }
