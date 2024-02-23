@@ -18,7 +18,7 @@ namespace InnoClinic.ProfilesAPI.UseCases.Features.Patients.Commands
                 _mapper = mapper;
             }
 
-            public async Task<PatientReadDTO?> Handle(
+            public async Task<PatientReadDTO> Handle(
                 CreateNewPatientCommand request, CancellationToken cancellationToken)
             {
 
@@ -28,7 +28,7 @@ namespace InnoClinic.ProfilesAPI.UseCases.Features.Patients.Commands
                 await _patientRepository.SaveAsync();
                 var result = _mapper.Map<PatientReadDTO>(patientToInsert);
 
-                return result == null ? null : await Task.FromResult(result);
+                return result;
             }
         }
     }

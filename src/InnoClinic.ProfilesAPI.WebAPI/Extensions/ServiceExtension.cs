@@ -1,11 +1,7 @@
-﻿using InnoClinic.ProfilesAPI.Infrastructure.DataAccess;
-using InnoClinic.ProfilesAPI.Infrastructure.Repositories.Interfaces;
+﻿using InnoClinic.ProfilesAPI.Infrastructure.Repositories.Interfaces;
 using InnoClinic.ProfilesAPI.Infrastructure.Repositories;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
 using InnoClinic.ProfilesAPI.UseCases.Mappings;
 
 namespace InnoClinic.ProfilesAPI.WebAPI.Extensions

@@ -1,6 +1,12 @@
-﻿namespace InnoClinic.ProfilesAPI.Core.DTOs.PatientDTO
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InnoClinic.ProfilesAPI.Core.DTOs.DoctorDTO
 {
-    public class PatientReadDTO : BaseDTO
+    public class DoctorCreateDTO
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }

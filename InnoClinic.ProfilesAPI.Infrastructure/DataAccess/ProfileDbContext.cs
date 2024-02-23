@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using InnoClinic.ProfilesAPI.Core.Entities.Models;
+﻿using InnoClinic.ProfilesAPI.Core.Entities.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace InnoClinic.ProfilesAPI.Infrastructure.DataAccess
 {

@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using InnoClinic.ProfilesAPI.Core.DTOs.PatientDTO;
-using InnoClinic.ProfilesAPI.Core.Entities.Models;
-using InnoClinic.ProfilesAPI.Infrastructure.Repositories.Interfaces;
+﻿using InnoClinic.ProfilesAPI.Core.DTOs.PatientDTO;
 using InnoClinic.ProfilesAPI.UseCases.Features.Patient.Commands;
 using InnoClinic.ProfilesAPI.UseCases.Features.Patient.Queries;
 using InnoClinic.ProfilesAPI.UseCases.Features.Patients.Commands;
@@ -41,7 +38,7 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Controllers.v1
         {
             var result = await _mediator.Send(new CreateNewPatientCommand(patientCreateDTO));
 
-            return CreatedAtAction("Get", new { id = result.Id }, result);
+            return Ok();
         }
 
         [HttpPut("{id}")]

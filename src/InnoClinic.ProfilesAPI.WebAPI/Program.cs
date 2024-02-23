@@ -1,5 +1,3 @@
-
-using InnoClinic.ProfilesAPI.UseCases;
 using InnoClinic.ProfilesAPI.WebAPI.Extensions;
 
 namespace InnoClinic.ProfilesAPI.WebAPI

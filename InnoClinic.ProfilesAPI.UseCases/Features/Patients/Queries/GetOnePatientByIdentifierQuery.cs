@@ -2,11 +2,6 @@
 using InnoClinic.ProfilesAPI.Core.DTOs.PatientDTO;
 using InnoClinic.ProfilesAPI.Infrastructure.Repositories.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InnoClinic.ProfilesAPI.UseCases.Features.Patient.Queries
 {
