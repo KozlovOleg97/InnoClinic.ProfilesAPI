@@ -8,9 +8,8 @@ namespace InnoClinic.ProfilesAPI.UseCases.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<Patient, PatientReadDTO>().ReverseMap();
-            CreateMap<PatientCreateDTO, Patient>().
-                ForMember(m => m.IsLinkedToAccount, p => p.MapFrom(src => src.PhoneNumber));
+            CreateMap<Patient, PatientReadDTO>();
+            CreateMap<PatientCreateDTO, Patient>().ReverseMap();
             CreateMap<PatientUpdateDTO, Patient>();
         }
     }

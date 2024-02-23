@@ -4,6 +4,7 @@ using InnoClinic.ProfilesAPI.Core.Entities.Models;
 using InnoClinic.ProfilesAPI.Infrastructure.Repositories.Interfaces;
 using InnoClinic.ProfilesAPI.UseCases.Features.Patient.Commands;
 using InnoClinic.ProfilesAPI.UseCases.Features.Patient.Queries;
+using InnoClinic.ProfilesAPI.UseCases.Features.Patients.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
