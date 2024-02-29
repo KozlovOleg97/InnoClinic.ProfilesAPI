@@ -5,7 +5,7 @@ namespace InnoClinic.ProfilesAPI.Infrastructure.DataAccess
 {
     public class ProfileDbContext : DbContext
     {
-       
+
 
         public ProfileDbContext(DbContextOptions<ProfileDbContext> options) : base(options) { }
 
@@ -13,7 +13,7 @@ namespace InnoClinic.ProfilesAPI.Infrastructure.DataAccess
         public DbSet<Patient> Patients { get; set; }
         //public DbSet<Receptionist> Receptionists => Set<Receptionist>();
 
-        
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

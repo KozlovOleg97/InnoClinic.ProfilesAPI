@@ -11,7 +11,7 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Controllers.v1
     [ApiController]
     public class PatientController : Controller
     {
-       private readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
         public PatientController(IMediator mediator)
         {
@@ -27,7 +27,7 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Controllers.v1
         }
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Get(Guid id)
         {
             var result = await _mediator.Send(new GetOnePatientByIdentifierQuery(id));
             return result == null ? NotFound() : Ok(result);
@@ -42,9 +42,9 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Controllers.v1
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdatePatient(int id, [FromBody] PatientUpdateDTO patientUpdateDTO)
+        public async Task<IActionResult> UpdatePatient(Guid id, [FromBody] PatientUpdateDTO patientUpdateDTO, Guid guid)
         {
-            if (id != patientUpdateDTO.Id) return BadRequest();
+            if (guid != patientUpdateDTO.Id) return BadRequest();
 
             await _mediator.Send(new EditExistingPatientCommand(patientUpdateDTO));
 
@@ -52,7 +52,7 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Controllers.v1
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePatient(int id)
+        public async Task<IActionResult> DeletePatient(Guid id)
         {
             await _mediator.Send(new RemoveExistingPatientCommand(id));
             return NoContent();

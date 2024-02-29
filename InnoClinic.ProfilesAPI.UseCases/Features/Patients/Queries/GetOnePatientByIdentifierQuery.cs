@@ -5,7 +5,7 @@ using MediatR;
 
 namespace InnoClinic.ProfilesAPI.UseCases.Features.Patient.Queries
 {
-    public record GetOnePatientByIdentifierQuery (int Id) : IRequest<PatientReadDTO>
+    public record GetOnePatientByIdentifierQuery(Guid Id) : IRequest<PatientReadDTO>
     {
         public sealed class GetOnePatientByIdentifierHandler : IRequestHandler<GetOnePatientByIdentifierQuery, PatientReadDTO>
         {
@@ -23,6 +23,6 @@ namespace InnoClinic.ProfilesAPI.UseCases.Features.Patient.Queries
                 var patient = await _patientRepository.GetAsync(request.Id);
                 return _mapper.Map<PatientReadDTO>(patient);
             }
-        } 
+        }
     }
 }

@@ -32,8 +32,7 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Migrations
                     b.Property<Guid>("AccountId")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime?>("DateOfBirth")
-                        .IsRequired()
+                    b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("FirstName")
@@ -48,9 +47,11 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("MiddleName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<Guid>("PhotoId")

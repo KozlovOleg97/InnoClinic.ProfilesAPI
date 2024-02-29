@@ -6,7 +6,7 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Controllers.v1
     {
         public IActionResult Index()
         {
-            return View();
+            return Ok();
         }
     }
 }

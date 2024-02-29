@@ -23,7 +23,7 @@ namespace InnoClinic.ProfilesAPI.UseCases.Features.Patients.Commands
             {
 
 
-                var patientToInsert = _mapper.Map<InnoClinic.ProfilesAPI.Core.Entities.Models.Patient>(request.patientToCreate); 
+                var patientToInsert = _mapper.Map<Core.Entities.Models.Patient>(request.patientToCreate);
                 await _patientRepository.AddAsync(patientToInsert);
                 await _patientRepository.SaveAsync();
                 var result = _mapper.Map<PatientReadDTO>(patientToInsert);

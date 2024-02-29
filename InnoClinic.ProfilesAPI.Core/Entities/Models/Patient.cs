@@ -2,10 +2,10 @@
 
 namespace InnoClinic.ProfilesAPI.Core.Entities.Models
 {
-    public partial class Patient : BaseEntityProfile
+    public class Patient : BaseEntityProfile
     {
-        public string? PhoneNumber { get; set; }
-        public bool IsLinkedToAccount { get; set; }
-        public DateTime? DateOfBirth { get; set; }
+        public required string PhoneNumber { get; set; }
+        public bool IsLinkedToAccount { get; set; } = false;
+        public DateTime DateOfBirth { get; set; }
     }
 }

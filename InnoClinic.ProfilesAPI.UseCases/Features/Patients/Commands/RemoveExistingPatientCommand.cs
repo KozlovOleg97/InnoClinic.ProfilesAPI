@@ -4,7 +4,7 @@ using MediatR;
 
 namespace InnoClinic.ProfilesAPI.UseCases.Features.Patient.Commands
 {
-    public sealed record RemoveExistingPatientCommand (int Id) : IRequest
+    public sealed record RemoveExistingPatientCommand(Guid Id) : IRequest
     {
         public sealed class RemoveExistingPatientHandler : IRequestHandler<RemoveExistingPatientCommand, Unit>
         {

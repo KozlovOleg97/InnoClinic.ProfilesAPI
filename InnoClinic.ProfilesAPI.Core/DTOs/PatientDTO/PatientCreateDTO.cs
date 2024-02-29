@@ -1,12 +1,14 @@
-﻿namespace InnoClinic.ProfilesAPI.Core.DTOs.PatientDTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace InnoClinic.ProfilesAPI.Core.DTOs.PatientDTO
 {
     public class PatientCreateDTO
     {
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
-        public string? MiddleName { get; set; }
-        public bool IsLinkedToAccount { get; set; }
-        public string? PhoneNumber { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        [Required] public required string FirstName { get; set; }
+        [Required] public required string LastName { get; set; }
+        public required string MiddleName { get; set; }
+        public bool IsLinkedToAccount { get; set; } = false;
+        [Required] public required string PhoneNumber { get; set; }
+        [Required] DateTime DateOfBirth { get; set; }
     }
 }
