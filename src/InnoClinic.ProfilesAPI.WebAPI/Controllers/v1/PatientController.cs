@@ -22,31 +22,31 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Controllers.v1
         public async Task<IActionResult> GetAll()
         {
 
-            var result = await _mediator.Send(new GetAllPatientsQuery());
+            var result = await _mediator.Send(new GetPatientsQuery());
             return Ok(result);
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> Get(Guid id)
+        [HttpGet("{guid:guid}")]
+        public async Task<IActionResult> Get(Guid guid)
         {
-            var result = await _mediator.Send(new GetOnePatientByIdentifierQuery(id));
+            var result = await _mediator.Send(new GetPatientByIdentifierQuery(guid));
             return result == null ? NotFound() : Ok(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostPatient([FromBody] PatientCreateDTO patientCreateDTO)
+        public async Task<IActionResult> CreatePatient([FromBody] PatientCreateDTO patientCreateDTO)
         {
-            var result = await _mediator.Send(new CreateNewPatientCommand(patientCreateDTO));
+            var result = await _mediator.Send(new CreatePatientCommand(patientCreateDTO));
 
             return Ok();
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdatePatient(Guid id, [FromBody] PatientUpdateDTO patientUpdateDTO, Guid guid)
+        public async Task<IActionResult> UpdatePatient([FromBody] PatientUpdateDTO patientUpdateDTO, Guid guid)
         {
             if (guid != patientUpdateDTO.Id) return BadRequest();
 
-            await _mediator.Send(new EditExistingPatientCommand(patientUpdateDTO));
+            await _mediator.Send(new EditPatientCommand(patientUpdateDTO));
 
             return NoContent();
         }
@@ -54,7 +54,7 @@ namespace InnoClinic.ProfilesAPI.WebAPI.Controllers.v1
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePatient(Guid id)
         {
-            await _mediator.Send(new RemoveExistingPatientCommand(id));
+            await _mediator.Send(new RemovePatientCommand(id));
             return NoContent();
         }
     }

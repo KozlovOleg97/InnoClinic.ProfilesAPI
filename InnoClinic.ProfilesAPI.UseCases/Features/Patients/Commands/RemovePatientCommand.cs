@@ -4,9 +4,9 @@ using MediatR;
 
 namespace InnoClinic.ProfilesAPI.UseCases.Features.Patient.Commands
 {
-    public sealed record RemoveExistingPatientCommand(Guid Id) : IRequest
+    public sealed record RemovePatientCommand(Guid Id) : IRequest
     {
-        public sealed class RemoveExistingPatientHandler : IRequestHandler<RemoveExistingPatientCommand, Unit>
+        public sealed class RemoveExistingPatientHandler : IRequestHandler<RemovePatientCommand, Unit>
         {
             private readonly IPatientRepository _patientRepository;
             private readonly IMapper _mapper;
@@ -17,10 +17,9 @@ namespace InnoClinic.ProfilesAPI.UseCases.Features.Patient.Commands
                 _mapper = mapper;
             }
 
-            public async Task<Unit> Handle(RemoveExistingPatientCommand request, CancellationToken cancellationToken)
+            public async Task<Unit> Handle(RemovePatientCommand request, CancellationToken cancellationToken)
             {
                 await _patientRepository.DeleteAsync(request.Id);
-                await _patientRepository.SaveAsync();
 
                 return Unit.Value;
             }

@@ -18,23 +18,30 @@ namespace InnoClinic.ProfilesAPI.Infrastructure.Repositories
         public async Task AddAsync(TEntity entity) => await _dbSet.AddAsync(entity);
         public async Task<IEnumerable<TEntity>> GetAllAsync() => await _dbSet.ToListAsync();
 
-        public async Task<TEntity?> GetAsync(Guid? id) => await _dbSet.FindAsync(id);
+        public async Task<TEntity> GetAsync(Guid id)
+        {
+            var entity = await _dbSet.FindAsync(id);
+            if (entity == null)
+            {
+                throw new Exception($"Entity with id {id} not found");
+            }
 
+            return entity;
+        }
         public async Task DeleteAsync(Guid id)
         {
             var dataToDelete = await _dbSet.FindAsync(id);
             if (dataToDelete != null)
                 _dbSet.Remove(dataToDelete);
+
+            await _profileDbContext.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(TEntity entity)
         {
             await Task.Run(() => _dbSet.Attach(entity));
             _profileDbContext.Entry(entity).State = EntityState.Modified;
-        }
 
-        public async Task SaveAsync()
-        {
             await _profileDbContext.SaveChangesAsync();
         }
     }

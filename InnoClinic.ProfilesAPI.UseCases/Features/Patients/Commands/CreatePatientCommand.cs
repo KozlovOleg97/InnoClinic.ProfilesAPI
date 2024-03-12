@@ -5,9 +5,9 @@ using MediatR;
 
 namespace InnoClinic.ProfilesAPI.UseCases.Features.Patients.Commands
 {
-    public sealed record CreateNewPatientCommand(PatientCreateDTO patientToCreate) : IRequest<PatientReadDTO>
+    public sealed record CreatePatientCommand(PatientCreateDTO patientToCreate) : IRequest<PatientReadDTO>
     {
-        public class CreateNewPatientHandler : IRequestHandler<CreateNewPatientCommand, PatientReadDTO>
+        public class CreateNewPatientHandler : IRequestHandler<CreatePatientCommand, PatientReadDTO>
         {
             private readonly IPatientRepository _patientRepository;
             private readonly IMapper _mapper;
@@ -19,13 +19,12 @@ namespace InnoClinic.ProfilesAPI.UseCases.Features.Patients.Commands
             }
 
             public async Task<PatientReadDTO> Handle(
-                CreateNewPatientCommand request, CancellationToken cancellationToken)
+                CreatePatientCommand request, CancellationToken cancellationToken)
             {
 
 
                 var patientToInsert = _mapper.Map<Core.Entities.Models.Patient>(request.patientToCreate);
                 await _patientRepository.AddAsync(patientToInsert);
-                await _patientRepository.SaveAsync();
                 var result = _mapper.Map<PatientReadDTO>(patientToInsert);
 
                 return result;

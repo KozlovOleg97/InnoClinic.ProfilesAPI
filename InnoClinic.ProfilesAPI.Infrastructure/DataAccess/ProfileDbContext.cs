@@ -17,8 +17,6 @@ namespace InnoClinic.ProfilesAPI.Infrastructure.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-
             modelBuilder.Entity<Patient>().Property(e => e.Id).HasDefaultValueSql("gen_random_uuid()");
             modelBuilder.Entity<Patient>().Property(e => e.FirstName).IsRequired();
             modelBuilder.Entity<Patient>().Property(e => e.LastName).IsRequired();
